@@ -19,7 +19,7 @@ jobs:
   build_test:
     name: Build & Test App
     # The type of runner that the job will run on
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [14.x]
@@ -42,3 +42,7 @@ jobs:
         run: |
           npm install
           npm ci
+      # build and test the apps
+      - name: build & test
+        run: |
+          npm run lint
